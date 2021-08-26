@@ -22,4 +22,5 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-Route::get('/table',[Controllers\PowerController::class,'index']);
+Route::get('/',[Controllers\PowerController::class,'index']);
+Route::get('/',[Controllers\PowerController::class,'calendar']);

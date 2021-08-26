@@ -21,7 +21,12 @@
     <div class="container flex flex-row">
         <div class="px-4 bg-blue-400 rounded-md">
         <ul>
-            <li><p>Дата</p></li>
+            <li><form class="calendar" method = "post">
+                <p>Дата        
+                <input type="date" name="date" min='{{$cal}}'>
+                <input type="submit"  class="button" value="Выбрать">
+                </p>
+                </form></li>
             <li><p>Данные об объекте</p></li>
             <li><p>Функциональное назначение: </p></li>>
             <li><p>Установленная мощность <br> в том числе :</p>

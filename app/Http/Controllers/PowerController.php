@@ -20,4 +20,11 @@ class PowerController extends Controller
         }
         return view('chart',compact('datas'));
     }
+    public function calendar()
+    {
+        $cal1= DB::table('powers')
+            ->min('created_at');
+         $cal=mb_substr($cal1,0,-9);
+        return view('welcome',compact('cal'));
+    }
 }
