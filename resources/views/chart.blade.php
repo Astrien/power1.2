@@ -1,4 +1,5 @@
 @extends('welcome', ['title'=>'Главная страница'])
+
 @section('content')
 <script type="text/javascript">
     window.onload = function() {
@@ -46,8 +47,49 @@
                 alignTicks: false
             },
             rangeSelector: {
-                enabled: false
-            },
+                allButtonsEnabled: true,
+                        selected: 1,
+                        buttons: [ {
+                            type: 'hour',
+                            count: 1,
+                            text: '1 час'
+                        }, {
+                            type: 'day',
+                            count: 1,
+                            text: 'День',
+                            dataGrouping: {
+                    forced: true,
+                    units: [['hour', [1]]]
+                }
+                        }, {
+                            type: 'week',
+                            count: 1,
+                            text: 'Нед.',
+                            dataGrouping: {
+                    forced: true,
+                    units: [['week', [1]]]
+                }
+                        }, {
+                            type: 'month',
+                            count: 1,
+                            text: 'Мес.',
+                            dataGrouping: {
+                    forced: true,
+                    units: [['day', [1]]]
+                }
+                        }, {
+                            type: 'year',
+                            count: 1,
+                            text: 'Год',
+                            dataGrouping: {
+                    forced: true,
+                    units: [['month', [1]]]
+                }
+                        }]
+                    },
+
+
+
             xAxis: {
                 categories: ['Текущее']
             },
@@ -73,7 +115,7 @@
             }],
 
             navigator: {
-                enabled: false
+                enabled: true
             },
             plotOptions: {
                 column: {

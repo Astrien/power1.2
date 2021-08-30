@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PowerController extends Controller
 {
-    public function index()
+    public function chart()
     {
         $times = DB::table('powers')
             ->pluck('created_at');
@@ -19,9 +19,10 @@ class PowerController extends Controller
             $datas[] =  array(strtotime($times[$index]), (float)$powers[$index]);
         }
         return view('chart',compact('datas'));
+
     }
 
-    public function calendar()
+    public function index()
     { 
         $min= DB::table('powers')
         ->latest()
