@@ -23,7 +23,7 @@
         <ul>
             <li><form class="calendar" method = "post">
                 <p>Дата        
-                <input type="date" name="date" min='{{$cal}}'>
+                <input type="date" name="date" min='{{$min}}' max='{{$max}}'>
                 <input type="submit"  class="button" value="Выбрать">
                 </p>
                 </form></li>
@@ -47,7 +47,6 @@
                 </ul>
             </li>
         </ul>
-
         </div>
         @yield('content')
     </div>
